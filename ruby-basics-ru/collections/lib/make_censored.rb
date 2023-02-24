@@ -5,8 +5,8 @@
 def make_censored(text, stop_words)
   # BEGIN
   pattern = '$#%!'
-  result = text.split(' ').map do |word|
-    stop_words.include? word ? pattern : word
+  result = text.split.map do |word|
+    stop_words.include?(word) ? pattern : word
   end
   result.join ' '
   # END
