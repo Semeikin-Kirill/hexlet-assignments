@@ -1,0 +1,10 @@
+h1 Posts
+= link_to 'New Post', new_post_path
+
+- @posts.each do |post|
+  h2 = link_to post.title, post_path(post)
+  p = post.body
+  small
+    / John Doe, 16:12 14.12.21}
+    i #{post.summary}, #{post.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%y")}
+  hr
